@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "user1s",
+  "info": {
+    "singularName": "user1",
+    "pluralName": "user1s",
+    "displayName": "User1",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    },
+    "Row1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user.row1"
+    },
+    "Row2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user.row2"
+    }
+  }
+}
