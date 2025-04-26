@@ -28,6 +28,21 @@
       "type": "component",
       "repeatable": false,
       "component": "home.row2"
+    },
+    "Row2Listing": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.row2-listing"
+    },
+    "Row3": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.row3"
+    },
+    "Row3Team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.row3-team"
     }
   }
 }

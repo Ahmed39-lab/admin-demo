@@ -369,6 +369,45 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
+  collectionName: 'careers';
+  info: {
+    displayName: 'Career';
+    pluralName: 'careers';
+    singularName: 'career';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    apply_email: Schema.Attribute.Email;
+    benefits: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    datePublished: Schema.Attribute.Date;
+    department: Schema.Attribute.String;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career.career'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    requirements: Schema.Attribute.Text;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      ['Ex:', 'Full Time', 'Part Time', 'Internship']
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -451,6 +490,9 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Row1: Schema.Attribute.Component<'home.section1', false>;
     Row2: Schema.Attribute.Component<'home.row2', false>;
+    Row2Listing: Schema.Attribute.Component<'home.row2-listing', true>;
+    Row3: Schema.Attribute.Component<'home.row3', false>;
+    Row3Team: Schema.Attribute.Component<'home.row3-team', true>;
     SEO: Schema.Attribute.Component<'general.seo', false>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1080,6 +1122,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::career.career': ApiCareerCareer;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
