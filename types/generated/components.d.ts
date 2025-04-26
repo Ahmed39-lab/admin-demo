@@ -17,11 +17,30 @@ export interface GeneralBtn extends Struct.ComponentSchema {
 export interface GeneralFooter extends Struct.ComponentSchema {
   collectionName: 'components_general_footers';
   info: {
+    description: '';
     displayName: 'Footer';
   };
   attributes: {
-    copyright: Schema.Attribute.Text;
+    content: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
+    heading: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Why do we use it'>;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface GeneralFooterListing extends Struct.ComponentSchema {
+  collectionName: 'components_general_footer_listings';
+  info: {
+    displayName: 'FooterListing';
+  };
+  attributes: {
+    btnAction: Schema.Attribute.String;
+    btnLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'More About It'>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Why do we use it'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -122,13 +141,15 @@ export interface HomeRow2Listing extends Struct.ComponentSchema {
 export interface HomeRow3 extends Struct.ComponentSchema {
   collectionName: 'components_home_row3s';
   info: {
+    description: '';
     displayName: 'Row3';
   };
   attributes: {
     btnAction: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#'>;
     btnLabel: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Get a Ride'>;
-    content: Schema.Attribute.Text;
+    content: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
     contentSmall: Schema.Attribute.Text &
       Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
     heading: Schema.Attribute.String &
@@ -142,14 +163,15 @@ export interface HomeRow3 extends Struct.ComponentSchema {
 export interface HomeRow3Team extends Struct.ComponentSchema {
   collectionName: 'components_home_row3_teams';
   info: {
-    displayName: 'Row3Team';
+    description: '';
+    displayName: 'Row3Listing';
   };
   attributes: {
     btnLabel: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'More About It'>;
     content: Schema.Attribute.Text &
       Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
-    ContentSmall: Schema.Attribute.String &
+    ContentSmall: Schema.Attribute.Text &
       Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
     heading: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Why do we use it'>;
@@ -161,6 +183,7 @@ export interface HomeRow3Team extends Struct.ComponentSchema {
 export interface HomeRow4 extends Struct.ComponentSchema {
   collectionName: 'components_home_row4s';
   info: {
+    description: '';
     displayName: 'Row4';
   };
   attributes: {
@@ -175,6 +198,7 @@ export interface HomeRow4 extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Why do we use it'>;
     headingSmall: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Why do we use it'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -188,7 +212,7 @@ export interface HomeRow4Listing extends Struct.ComponentSchema {
     btnAction: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#'>;
     btnLabel: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'More About It'>;
-    content: Schema.Attribute.String &
+    content: Schema.Attribute.Text &
       Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
     contentSmall: Schema.Attribute.Text &
       Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
@@ -203,6 +227,7 @@ export interface HomeRow4Listing extends Struct.ComponentSchema {
 export interface HomeRow5 extends Struct.ComponentSchema {
   collectionName: 'components_home_row5s';
   info: {
+    description: '';
     displayName: 'Row5';
   };
   attributes: {
@@ -211,11 +236,13 @@ export interface HomeRow5 extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'More About It'>;
     content: Schema.Attribute.Text &
       Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
-    contentSmall: Schema.Attribute.Text;
+    contentSmall: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters'>;
     heading: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Why do we use it'>;
     headingSmall: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Why do we use it'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -264,6 +291,7 @@ export interface HomeRow6 extends Struct.ComponentSchema {
 export interface HomeRow6Listing extends Struct.ComponentSchema {
   collectionName: 'components_home_row6_listings';
   info: {
+    description: '';
     displayName: 'Row6Listing';
   };
   attributes: {
@@ -278,6 +306,7 @@ export interface HomeRow6Listing extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Why do we use it'>;
     headingSmall: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Why do we use it'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -440,6 +469,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'general.btn': GeneralBtn;
       'general.footer': GeneralFooter;
+      'general.footer-listing': GeneralFooterListing;
       'general.header': GeneralHeader;
       'general.listing': GeneralListing;
       'general.seo': GeneralSeo;

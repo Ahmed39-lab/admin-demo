@@ -1,7 +1,8 @@
 {
   "collectionName": "components_home_row3s",
   "info": {
-    "displayName": "Row3"
+    "displayName": "Row3",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,7 +11,8 @@
       "default": "Why do we use it"
     },
     "content": {
-      "type": "text"
+      "type": "text",
+      "default": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters"
     },
     "headingSmall": {
       "type": "string",
@@ -21,14 +23,15 @@
       "default": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "btnLabel": {
       "type": "string",
